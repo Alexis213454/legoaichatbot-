@@ -18,30 +18,18 @@ Organized by year, theme, or set name
 
 Whether you're building your collection, checking if you already own a set, or just curious, this website gives you quick access to LEGO set numbers from the past to today. I’m a beginner learning web development, and I love LEGO. This site is a personal project where I can combine both — and hopefully help other LEGO fans at the same time. It’s just the beginning, and I’ll keep improving it as I learn more!
 
-## Badges
-tbd
-## Visuals
-
-## Installation
-tbd
-
-## Usage
-
-
-## Support
 
 ## Roadmap
-Collecting ideas about Features
-Start of particular section creation plan
+Frontend: React (or plain HTML/CSS/JS)
+Data Source: Rebrickable API
+Optional Backend: Node.js/Express or Firebase
+Hosting: GitHub Pages 
 
-## Contributing
-tbd
+Set up project structure and styling
+Fetch and display set data
+Add search/filter UI
+Test responsiveness and functionality
 
-## Authors and acknowledgment
-tbd
-
-## License
-tbd
 
 ## Project status
 Planned start date 18.05.25
