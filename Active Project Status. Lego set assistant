@@ -1,0 +1,66 @@
+RAG LEGO Price Chat Assistant 🧱
+
+A modern chat-based application that uses Retrieval-Augmented Generation (RAG) to provide LEGO set price information. Built with Flask, FastAPI, and CopilotKit, powered by OpenAI (GPT) to deliver intelligent responses about LEGO set prices.
+
+Features:
+
+Modern Chat Interface: Built with vanilla CSS and CopilotKit components
+OpenAI Integration: Powered by GPT models for intelligent responses
+RAG-Powered Responses: AI-generated responses augmented with LEGO price data
+Multi-Source Data: Integration with Rebrickable API
+FastAPI Backend: High-performance API with automatic documentation
+Docker Support: Easy deployment with Docker and Docker Compose
+Gitpod Ready: One-click cloud development environment
+Model Indicators: Visual badges showing which AI model was used
+Responsive Design: Beautiful UI that works on all devices
+
+Project structure:
+rag-lego-price/
+├── backend/
+│   ├── main.py              # FastAPI server with RAG endpoints
+│   ├── requirements.txt     # Python dependencies
+│   └── Dockerfile          # Backend container
+├── frontend/
+│   ├── app.py              # Streamlit web application
+│   ├── requirements.txt    # Python dependencies
+│   └── Dockerfile         # Frontend container
+├── docker-compose.yml      # Multi-service orchestration
+├── .gitpod.yml           # Gitpod development environment
+└── README.md             # This file
+
+
+Frontend:
+
+Streamlit: Modern web framework for data apps
+streamlit-chat: Chat interface components
+Responsive Design: Mobile-first approach
+
+Backend
+
+FastAPI: High-performance web framework
+Pydantic: Data validation and serialization
+Uvicorn: ASGI server for FastAPI
+LangChain: RAG implementation framework
+OpenAI API: Primary LLM (GPT models)
+
+Data Sources
+
+Rebrickable API: LEGO set information and pricing
+Mock Data: Fallback for development and testing
+
+Infrastructure
+
+Docker: Containerization
+Docker Compose: Multi-service orchestration
+Gitpod: Cloud development environment
+
+
+
+Acknowledgments:
+
+Built with Streamlit, FastAPI, and streamlit-chat
+Powered by OpenAI (GPT) models
+RAG (Retrieval-Augmented Generation) technology
+streamlit-chat for modern AI chat components
+Inspired by the need for better LEGO price discovery
+API integration with Rebrickable
