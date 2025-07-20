@@ -4,7 +4,7 @@ A modern **Retrieval-Augmented Generation (RAG)** system for LEGO data, powered 
 
 ## 🚀 Quick Start - Launch in Gitpod
 
-**[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rogerolowski/grok-alex-lego-rag1)**
+**[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Alexis213454/legoaichatbot-.git)**
 
 **⚡ Instant setup (2-3 minutes):**
 1. ✅ **Pre-built database** with 1,338+ LEGO records
@@ -234,6 +234,6 @@ uv sync --dev
 
 ## 🎯 Quick Launch
 
-**[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rogerolowski/grok-alex-lego-rag1)**
+**[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Alexis213454/legoaichatbot-.git)**
 
 Alex
