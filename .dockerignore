@@ -1,0 +1,101 @@
+# Git and version control
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+docs/
+
+# Development files
+.env
+.env.local
+.env.gitpod
+.env.example
+*.log
+*.tmp
+
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.uv/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Database files (will be created in container)
+*.db
+*.duckdb
+lego_data.db
+lego_data.duckdb
+
+# FAISS index (will be created in container)
+faiss_index/
+
+# Legacy files
+chroma_db/
+requirements*.txt
+preload_db.py
+migrate_to_duckdb_faiss.py
+install_dependencies.sh
+install_dependencies.bat
+load_data_enhanced.py
+app_enhanced.py
+ENHANCEMENTS.md
+GITPOD_SETUP.md
+
+# Test files
+tests/
+test_*.py
+*_test.py
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+cache/
+
+# Local development scripts
+test_gitpod.ps1
+*.ps1
+*.bat
+*.sh
+
+# Large data files (if any)
+*.csv
+*.json
+data/
+datasets/
+
+# Docker files (except the one we're using)
+Dockerfile
+docker-compose*.yml
+.dockerignore 

@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# UV
+.uv/
+
+# Cache directories
+.cache/
+cache/
+
+# Environment files
+.env
+.env.local
+.env.gitpod
+.env.example
+
+# Gitpod
+.gitpod/
+
+# Docker (keep .dockerignore and .gitpod.Dockerfile, ignore others)
+docker-compose*.yml
+Dockerfile
+!Dockerfile.gitpod
+!.gitpod.Dockerfile
+
+# Streamlit
+*.streamlit/
+
+# Database files (keeping for Gitpod deployment)
+# *.db
+# *.duckdb
+# lego_data.db
+# lego_data.duckdb
+
+# FAISS index (keeping for Gitpod deployment)
+# faiss_index/
+
+# ChromaDB (legacy)
+chroma_db/
+
+# IDE
+*.sublime-*
+*.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.tmp
+*.temp
+
+# Test files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

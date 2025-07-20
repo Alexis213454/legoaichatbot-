@@ -1,0 +1,85 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Health Check
+    command: |
+      echo "🏥 Running Health Checks..."
+      source .venv/bin/activate
+      
+      # Quick import tests
+      python -c "import streamlit, langchain, faiss, duckdb; print('✅ Core imports OK')" || echo "❌ Core imports failed"
+      python -c "import app; print('✅ App module OK')" || echo "❌ App module failed"
+      
+      # Database connection test
+      python -c "import duckdb; conn = duckdb.connect('lego_data.duckdb'); print('✅ Database OK')" || echo "❌ Database failed"
+      
+      # Environment check
+      python -c "import os; print(f'✅ Environment: RAG_MODE={os.getenv(\"RAG_MODE\", \"not set\")}')" || echo "❌ Environment check failed"
+      
+      # Run comprehensive debug check (optional)
+      echo "🔍 Running comprehensive system check..."
+      python debug_setup.py || echo "⚠️ Debug check had issues (non-critical)"
+      
+      echo "🏥 Health check complete!"
+
+  - name: RAG Startup
+    # Use 'before' for setup that should happen before the main command
+    before: |
+      # Verify environment
+      echo "🌱 Environment: PIP_CACHE_DIR=$PIP_CACHE_DIR, UV_CACHE_DIR=$UV_CACHE_DIR"
+      echo "🐍 Python version: $(python --version)"
+      echo "⚡ UV version: $(uv --version)"
+    
+    init: |
+      echo "🚀 Initializing LEGO RAG Environment..."
+      
+      # Activate virtual environment
+      source .venv/bin/activate || {
+        echo "🔧 Creating virtual environment..."
+        uv venv
+        source .venv/bin/activate
+      }
+      
+      # Install/update dependencies (only if needed)
+      echo "📦 Installing dependencies..."
+      uv sync --frozen
+      
+      # Check if data already exists
+      if [ -f "lego_data.duckdb" ] && [ -d "faiss_index" ]; then
+        echo "✅ Database and FAISS index found - skipping data loading!"
+      else
+        echo "📊 Loading data..."
+        python load_data.py
+        
+        echo "🔍 Creating FAISS index..."
+        python fix_faiss.py
+      fi
+      
+      echo "✅ Initialization complete!"
+    
+    command: |
+      echo "🎯 Starting Streamlit App..."
+      source .venv/bin/activate
+      streamlit run app.py --server.port 8080 --server.address 0.0.0.0
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+    visibility: public
+
+# Persist cache directories across workspace restarts
+workspaceLocation: "/workspace"
+checkoutLocation: "."
+
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-python.black-formatter
+    - ms-python.flake8
+
+# Git configuration for better performance
+gitConfig:
+  core.preloadindex: "true"
+  core.fscache: "true"
+  gc.auto: "256"
